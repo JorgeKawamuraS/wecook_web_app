@@ -1,0 +1,140 @@
+<div class="grid grid-cols-8 w-full">
+    <div class="border-r border-gray-500 col-span-2 flex flex-col p-1.5">
+        <div class="mt-3">
+            <h1 class="ml-3 font-semibold text-xl">Ingredientes</h1>
+        </div>
+        <mat-form-field class="mt-2" appearance="fill">
+            <mat-chip-list #chipList aria-label="Fruit selection">
+                <mat-chip
+                    *ngFor="let fruit of fruits"
+                    (removed)="remove(fruit)"
+                >
+                    {{ fruit }}
+                    <button matChipRemove>
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip>
+                <input
+                    placeholder="New fruit..."
+                    #fruitInput
+                    [formControl]="fruitCtrl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)"
+                />
+            </mat-chip-list>
+            <mat-autocomplete
+                #auto="matAutocomplete"
+                (optionSelected)="selected($event)"
+            >
+                <mat-option
+                    *ngFor="let fruit of filteredFruits | async"
+                    [value]="fruit"
+                >
+                    {{ fruit }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+
+        <div class="mt-3 flex flex-col">
+            <h1 class="font-semibold text-xl">Costo de preparación</h1>
+            <div class="my-2">
+                <ng5-slider
+                    [(value)]="minValue"
+                    [(highValue)]="maxValue"
+                    [options]="options"
+                ></ng5-slider>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="mt-3">
+            <h1 class="font-semibold text-xl">Tiempo de preparación</h1>
+            <div class="my-2">
+                <ng5-slider
+                    [(value)]="minTime"
+                    [(highValue)]="maxTime"
+                    [options]="timeOptions"
+                ></ng5-slider>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center col-span-6 mb-2">
+        <fuse-card
+            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl mt-3"
+            ><!---->
+            <div class="flex-0 w-80 md:w-64">
+                <img
+                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
+                    alt="Card cover image"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            <div class="flex flex-col flex-auto m-8 mb-4">
+                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
+                <div class="mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Eos temporibus ad, delectus possimus, veniam doloremque
+                    animi beatae molestiae fuga adipisci voluptate ea sequi
+                    praesentium nam, saepe minima ducimus omnis mollitia earum.
+                    Velit facere iste sunt quod! Reiciendis mollitia odio
+                    veritatis, sequi, dolor quos labore sit harum possimus quis
+                    commodi doloremque.
+                </div>
+            </div>
+            <!----><!----><!----></fuse-card
+        >
+        <fuse-card
+            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl mt-3"
+            ><!---->
+            <div class="flex-0 w-80 md:w-64">
+                <img
+                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
+                    alt="Card cover image"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            <div class="flex flex-col flex-auto m-8 mb-4">
+                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
+                <div class="mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Eos temporibus ad, delectus possimus, veniam doloremque
+                    animi beatae molestiae fuga adipisci voluptate ea sequi
+                    praesentium nam, saepe minima ducimus omnis mollitia earum.
+                    Velit facere iste sunt quod! Reiciendis mollitia odio
+                    veritatis, sequi, dolor quos labore sit harum possimus quis
+                    commodi doloremque.
+                </div>
+            </div>
+            <!----><!----><!----></fuse-card
+        >
+        <fuse-card
+            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl mt-3"
+            ><!---->
+            <div class="flex-0 w-80 md:w-64">
+                <img
+                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
+                    alt="Card cover image"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            <div class="flex flex-col flex-auto m-8 mb-4">
+                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
+                <div class="mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Eos temporibus ad, delectus possimus, veniam doloremque
+                    animi beatae molestiae fuga adipisci voluptate ea sequi
+                    praesentium nam, saepe minima ducimus omnis mollitia earum.
+                    Velit facere iste sunt quod! Reiciendis mollitia odio
+                    veritatis, sequi, dolor quos labore sit harum possimus quis
+                    commodi doloremque.
+                </div>
+            </div>
+            <!----><!----><!----></fuse-card
+        >
+    </div>
+</div>
