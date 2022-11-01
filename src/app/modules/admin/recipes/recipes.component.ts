@@ -6,6 +6,10 @@ import { Observable, startWith, map } from 'rxjs';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { LabelType, Options } from 'ng5-slider';
+import { PostServiceService } from 'app/services/post-service.service';
+import { Post } from 'app/models/post';
+import { Recipe } from 'app/models/recipe';
+import { RecipeService } from 'app/services/recipe/recipe.service';
 @Component({
     selector: 'app-recipes',
     templateUrl: './recipes.component.html',
@@ -44,7 +48,7 @@ export class RecipesComponent {
         translate: (value: number, label: LabelType): string => value + ' hrs',
     };
 
-    constructor() {
+    constructor(private postService: PostServiceService, private recipeService: RecipeService) {
         this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
             startWith(null),
             map((fruit: string | null) =>
@@ -87,5 +91,17 @@ export class RecipesComponent {
         return this.allFruits.filter((fruit) =>
             fruit.toLowerCase().includes(filterValue)
         );
+    }
+
+    users: Post[];
+    recipes: Recipe[];
+    notFound: true;
+    ngOnInit() {
+        this.postService.getAllUsers().subscribe(data => this.users = data);
+        this.recipeService.getAllRecipes().subscribe(data => {this.recipes = data},
+            (err: any) => {
+                console.error(err);
+                this.notFound = true;
+            });
     }
 }

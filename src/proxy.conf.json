@@ -1,0 +1,8 @@
+{
+    "/recipes/*": {
+        "target": "ec2-44-202-132-149.compute-1.amazonaws.com:8093",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

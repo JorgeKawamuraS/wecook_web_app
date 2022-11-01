@@ -66,7 +66,7 @@
     <div class="flex flex-col justify-center items-center col-span-6 mb-2">
         <fuse-card
             class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl mt-3"
-            ><!---->
+             *ngFor="let recipe of recipes"><!---->
             <div class="flex-0 w-80 md:w-64">
                 <img
                     src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
@@ -75,66 +75,13 @@
                 />
             </div>
             <div class="flex flex-col flex-auto m-8 mb-4">
-                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
+                <div class="text-2xl font-semibold leading-tight">{{recipe.name}}</div>
                 <div class="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eos temporibus ad, delectus possimus, veniam doloremque
-                    animi beatae molestiae fuga adipisci voluptate ea sequi
-                    praesentium nam, saepe minima ducimus omnis mollitia earum.
-                    Velit facere iste sunt quod! Reiciendis mollitia odio
-                    veritatis, sequi, dolor quos labore sit harum possimus quis
-                    commodi doloremque.
+                    {{recipe.preparation}
                 </div>
             </div>
             <!----><!----><!----></fuse-card
         >
-        <fuse-card
-            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl mt-3"
-            ><!---->
-            <div class="flex-0 w-80 md:w-64">
-                <img
-                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
-                    alt="Card cover image"
-                    class="w-full h-full object-cover"
-                />
-            </div>
-            <div class="flex flex-col flex-auto m-8 mb-4">
-                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
-                <div class="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eos temporibus ad, delectus possimus, veniam doloremque
-                    animi beatae molestiae fuga adipisci voluptate ea sequi
-                    praesentium nam, saepe minima ducimus omnis mollitia earum.
-                    Velit facere iste sunt quod! Reiciendis mollitia odio
-                    veritatis, sequi, dolor quos labore sit harum possimus quis
-                    commodi doloremque.
-                </div>
-            </div>
-            <!----><!----><!----></fuse-card
-        >
-        <fuse-card
-            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl mt-3"
-            ><!---->
-            <div class="flex-0 w-80 md:w-64">
-                <img
-                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
-                    alt="Card cover image"
-                    class="w-full h-full object-cover"
-                />
-            </div>
-            <div class="flex flex-col flex-auto m-8 mb-4">
-                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
-                <div class="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eos temporibus ad, delectus possimus, veniam doloremque
-                    animi beatae molestiae fuga adipisci voluptate ea sequi
-                    praesentium nam, saepe minima ducimus omnis mollitia earum.
-                    Velit facere iste sunt quod! Reiciendis mollitia odio
-                    veritatis, sequi, dolor quos labore sit harum possimus quis
-                    commodi doloremque.
-                </div>
-            </div>
-            <!----><!----><!----></fuse-card
-        >
+        
     </div>
 </div>
