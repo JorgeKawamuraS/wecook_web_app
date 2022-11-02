@@ -3,7 +3,7 @@
         <h1 class="ml-10 text-2xl font-semibold">Últimas Recetas</h1>
     </div>
 
-    <div class="mt-5 flex flex-col items-center justify-center">
+    <div class="mt-5 flex flex-col items-center justify-center" *ngFor="let recipe of lastestRecipes">
         <fuse-card
             class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl"
             ><!---->
@@ -15,67 +15,9 @@
                 />
             </div>
             <div class="flex flex-col flex-auto m-8 mb-4">
-                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
+                <div class="text-2xl font-semibold leading-tight">{{recipe.name}}</div>
                 <div class="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eos temporibus ad, delectus possimus, veniam doloremque
-                    animi beatae molestiae fuga adipisci voluptate ea sequi
-                    praesentium nam, saepe minima ducimus omnis mollitia earum.
-                    Velit facere iste sunt quod! Reiciendis mollitia odio
-                    veritatis, sequi, dolor quos labore sit harum possimus quis
-                    commodi doloremque.
-                </div>
-            </div>
-            <!----><!----><!----></fuse-card
-        >
-    </div>
-    <div class="mt-5 flex flex-col items-center justify-center">
-        <fuse-card
-            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl"
-            ><!---->
-            <div class="flex-0 w-80 md:w-64">
-                <img
-                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
-                    alt="Card cover image"
-                    class="w-full h-full object-cover"
-                />
-            </div>
-            <div class="flex flex-col flex-auto m-8 mb-4">
-                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
-                <div class="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eos temporibus ad, delectus possimus, veniam doloremque
-                    animi beatae molestiae fuga adipisci voluptate ea sequi
-                    praesentium nam, saepe minima ducimus omnis mollitia earum.
-                    Velit facere iste sunt quod! Reiciendis mollitia odio
-                    veritatis, sequi, dolor quos labore sit harum possimus quis
-                    commodi doloremque.
-                </div>
-            </div>
-            <!----><!----><!----></fuse-card
-        >
-    </div>
-    <div class="mt-5 flex flex-col items-center justify-center">
-        <fuse-card
-            class="flex flex-col md:flex-row max-w-80 md:max-w-160 w-full filter-article shadow-xl"
-            ><!---->
-            <div class="flex-0 w-80 md:w-64">
-                <img
-                    src="https://acomer.pe/wp-content/uploads/2016/08/asadoconpurefb.jpg"
-                    alt="Card cover image"
-                    class="w-full h-full object-cover"
-                />
-            </div>
-            <div class="flex flex-col flex-auto m-8 mb-4">
-                <div class="text-2xl font-semibold leading-tight">Receta 1</div>
-                <div class="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eos temporibus ad, delectus possimus, veniam doloremque
-                    animi beatae molestiae fuga adipisci voluptate ea sequi
-                    praesentium nam, saepe minima ducimus omnis mollitia earum.
-                    Velit facere iste sunt quod! Reiciendis mollitia odio
-                    veritatis, sequi, dolor quos labore sit harum possimus quis
-                    commodi doloremque.
+                    {{recipe.preparation}}
                 </div>
             </div>
             <!----><!----><!----></fuse-card
@@ -85,21 +27,10 @@
         <h1 class="ml-10 text-2xl font-semibold">Chefs más populares</h1>
     </div>
     <div class="flex w-full justify-around items-center mt-5">
-        <fuse-card
-            class="flex flex-col max-w-80 w-full filter-article ng-star-inserted"
+        
+        <fuse-card class="flex flex-col  max-w-80 w-full   filter-article" *ngFor="let chef of popularChefs"
             ><!----><img
-                src="https://elcomercio.pe/resizer/xKW099kAO6HCnLMtXLll9vdr9rU=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/LJ6MCJYJSZCHDK4BHYK53PFSWA.jpg"
-                alt="Card cover image"
-                class="object-cover ng-star-inserted"
-            />
-            <div class="m-8">
-                <div class="text-2xl font-semibold leading-tight">Jhon Doe</div>
-            </div>
-            <!----><!----><!----></fuse-card
-        >
-        <fuse-card class="flex flex-col max-w-80 w-full filter-article"
-            ><!----><img
-                src="https://elcomercio.pe/resizer/xKW099kAO6HCnLMtXLll9vdr9rU=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/LJ6MCJYJSZCHDK4BHYK53PFSWA.jpg"
+                src={{chef.profilePictureUrl}}
                 alt="Card cover image"
                 class="object-cover"
             />
@@ -108,16 +39,6 @@
             </div>
             <!----><!----><!----></fuse-card
         >
-        <fuse-card class="flex flex-col max-w-80 w-full filter-article"
-            ><!----><img
-                src="https://elcomercio.pe/resizer/xKW099kAO6HCnLMtXLll9vdr9rU=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/LJ6MCJYJSZCHDK4BHYK53PFSWA.jpg"
-                alt="Card cover image"
-                class="object-cover ng-star-inserted"
-            />
-            <div class="m-8 ng-star-inserted">
-                <div class="text-2xl font-semibold leading-tight">Jhon Doe</div>
-            </div>
-            <!----><!----><!----></fuse-card
-        >
+        
     </div>
 </div>

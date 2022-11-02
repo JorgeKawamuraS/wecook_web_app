@@ -5,9 +5,11 @@
 export const environment = {
     production: false,
     apiUrlFalse: 'https://jsonplaceholder.typicode.com/',
-    apiUrl: 'http://ec2-44-202-132-149.compute-1.amazonaws.com:8093/'
+    apiUrlJsonServe: 'http://localhost:3000/',
+    apiUrl: 'http://ec2-44-201-180-179.compute-1.amazonaws.com:8093/'
 };
 
+//https://offirent-e404.web.app/
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
